@@ -1,0 +1,25 @@
+$engine: 3
+$onesync: on
+$minFxVersion: 7290
+name: ND_Core
+description: The official recipe for ND_Core.
+author: Andyyy
+
+tasks: 
+  # Download default CFX resources
+  - action: download_github
+    src: https://github.com/citizenfx/cfx-server-data
+    ref: master
+    subpath: resources
+    dest: ./resources/[default]
+
+  # Download server.cfg
+  - action: download_file
+    url: https://raw.githubusercontent.com/nd-framework/txadmin-recipe/main/server.cfg
+    path: ./server.cfg
+
+  # Download logo
+  - action: download_file
+    url: https://github.com/nd-framework/txadmin-recipe/main/logo.png
+    path: ./logo.png
+    
