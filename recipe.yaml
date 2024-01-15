@@ -15,11 +15,27 @@ tasks:
 
   # Download server.cfg
   - action: download_file
-    url: https://raw.githubusercontent.com/nd-framework/txadmin-recipe/main/server.cfg
+    url: https://raw.githubusercontent.com/ND-Framework/txadmin-recipe/main/server.cfg
     path: ./server.cfg
 
   # Download logo
   - action: download_file
-    url: https://github.com/nd-framework/txadmin-recipe/main/logo.png
+    url: https://github.com/ND-Framework/txadmin-recipe/blob/main/logo.png
     path: ./logo.png
     
+  # Download ndcore.cfg
+  - action: download_file
+    url: https://raw.githubusercontent.com/ND-Framework/txadmin-recipe/main/ndcore.cfg
+    path: ./ndcore.cfg
+    
+  # Download resources.cfg
+  - action: download_file
+    url: https://raw.githubusercontent.com/ND-Framework/txadmin-recipe/main/resources.cfg
+    path: ./ndcore.cfg
+
+  - action: download_file
+    url: https://github.com/ND-Framework/ND_Core/releases/download/v2.1.1/ND_Core.zip
+    path: ./tmp/ox_core.zip
+  - action: unzip
+    src: ./tmp/ox_core.zip
+    dest: ./resources/[ox]
