@@ -32,10 +32,11 @@ tasks:
   - action: download_file
     url: https://raw.githubusercontent.com/ND-Framework/txadmin-recipe/main/resources.cfg
     path: ./ndcore.cfg
-
+    
+  # Download Resources
   - action: download_file
     url: https://github.com/ND-Framework/ND_Core/releases/download/v2.1.1/ND_Core.zip
-    path: ./tmp/ox_core.zip
+    path: ./tmp/ND_core.zip
   - action: unzip
-    src: ./tmp/ox_core.zip
-    dest: ./resources/[ox]
+    src: ./tmp/ND_core.zip
+    dest: ./resources/[nd]
