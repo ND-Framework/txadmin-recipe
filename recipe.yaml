@@ -23,8 +23,11 @@ tasks:
   # Prepare Database
   - action: connect_database
   - action: query_database
-    file: ./tmp/ndcore.sql
-
+    file: ./tmp/characters.sql
+    
+  - action: query_database
+    file: ./tmp/vehicles.sql
+    
   # Download default CFX resources
   - action: download_github
     src: https://github.com/citizenfx/cfx-server-data
