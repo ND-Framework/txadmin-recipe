@@ -98,6 +98,13 @@ tasks:
   - action: unzip
     src: ./tmp/ox_target.zip
     dest: ./resources/[ox]
+
+ - action: download_file
+    url: https://github.com/overextended/ox_doorlock/releases/download/v1.14.4/ox_doorlock.zip
+    path: ./tmp/ox_doorlock.zip
+  - action: unzip
+    src: ./tmp/ox_doorlock.zip
+    dest: ./resources/[ox]
     
   # Clean up
   - action: remove_path
