@@ -51,6 +51,14 @@ tasks:
     ref: main
     dest: ./resources/[dependencies]/pma-voice
 
+  # Download fivem-appearance
+  - action: download_file
+    url: https://github.com/pedr0fontoura/fivem-appearance/releases/latest/download/fivem-appearance.rar
+    path: ./tmp/fivem-appearance.rar
+  - action: unzip
+    src: ./tmp/fivem-appearance.rar
+    dest: ./resources/[dependencies]
+
   # Download ox_lib
   - action: download_file
     url: https://github.com/overextended/ox_lib/releases/latest/download/ox_lib.zip
@@ -175,3 +183,4 @@ tasks:
   # Clean up
   - action: remove_path
     path: ./tmp
+    
