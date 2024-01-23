@@ -145,7 +145,7 @@ tasks:
   # Download ND_Blackjack
   - action: download_github
     src: https://github.com/ND-Framework/ND_Blackjack
-    ref: main
+    ref: master
     subpath: resources
     dest: ./resources/[scripts]
 
