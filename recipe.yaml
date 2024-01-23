@@ -1,111 +1,177 @@
 $engine: 3
 $onesync: on
 $minFxVersion: 7290
-name: ND Core
-description: The official recipe for ND Core.
-author: Andyyy and Willow-6855
+name: ND_Core
+description: The official recipe for ND_Core.
+author: Andyyy
 
-tasks: 
-  #  Download Base Files
-  - action: download_github
-    src: https://github.com/ND-Framework/txadmin-recipe
-    ref: main
-    dest: ./tmp/
-
-  - action: move_path
-    src: ./tmp/server.cfg
-    dest: ./server.cfg
-
-  - action: move_path
-    src: ./tmp/logo.png
-    dest: ./logo.png
-
-  # Prepare Database
-  - action: connect_database
-  - action: query_database
-    file: ./tmp/characters.sql
+tasks:
+  # Download server.cfg
+  - action: download_file
+    url: https://raw.githubusercontent.com/ND-Framework/txadmin-recipe/main/server.cfg
+    path: ./server.cfg
     
-  - action: query_database
-    file: ./tmp/vehicles.sql
+  # Download ndcore.cfg
+  - action: download_file
+    url: https://raw.githubusercontent.com/ND-Framework/txadmin-recipe/main/ndcore.cfg
+    path: ./ndcore.cfg
+
+  # Download inventory.cfg
+  - action: download_file
+    url: https://raw.githubusercontent.com/ND-Framework/txadmin-recipe/main/inventory.cfg
+    path: ./inventory.cfg
     
+  # Download resources.cfg
+  - action: download_file
+    url: https://raw.githubusercontent.com/ND-Framework/txadmin-recipe/main/resources.cfg
+    path: ./resources.cfg
+
+  # Download logo
+  - action: download_file
+    url: https://github.com/ND-Framework/txadmin-recipe/blob/main/logo.png
+    path: ./logo.png
+
   # Download default CFX resources
   - action: download_github
     src: https://github.com/citizenfx/cfx-server-data
     ref: master
     subpath: resources
     dest: ./resources/[default]
-    
-  # Download Resources
-  - action: download_file
-    url: https://github.com/ND-Framework/ND_Core/releases/latest/download/ND_Core.zip
-    path: ./tmp/ND_core.zip
-  - action: unzip
-    src: ./tmp/ND_core.zip
-    dest: ./resources/[nd]
 
-  - action: download_file
-    url: https://github.com/ND-Framework/ND_Dealership/releases/latest/download/ND_Dealership.zip
-    path: ./tmp/ND_Dealership.zip
-  - action: unzip
-    src: ./tmp/ND_Dealership.zip
-    dest: ./resources/[nd]
-    ###
-  - action: download_file
-    url: https://github.com/ND-Framework/ND_Nitro/releases/latest/download/ND_Nitro.zip
-    path: ./tmp/ND_Nitro.zip
-  - action: unzip
-    src: ./tmp/ND_Nitro.zip
-    dest: ./resources/[nd]
-    
-  - action: download_file
-    url: https://github.com/ND-Framework/ND_Characters/releases/latest/download/ND_Characters.zip
-    path: ./tmp/ND_Characters.zip
-  - action: unzip
-    src: ./tmp/ND_Characters.zip
-    dest: ./resources/[nd]
+  # Download screenshot-basic
+  - action: download_github
+    src: https://github.com/citizenfx/screenshot-basic
+    ref: master
+    subpath: resources
+    dest: ./resources/[dependencies]
 
-  - action: download_file
-    url: https://github.com/ND-Framework/ND_Status/releases/latest/download/ND_Status.zip
-    path: ./tmp/ND_Status.zip
-  - action: unzip
-    src: ./tmp/ND_Status.zip
-    dest: ./resources/[nd]
-    
-  - action: download_file
-    url: https://github.com/ND-Framework/ND_Banking/releases/latest/download/ND_Banking.zip
-    path: ./tmp/ND_Banking.zip
-  - action: unzip
-    src: ./tmp/ND_Banking.zip
-    dest: ./resources/[nd]
+  # Download pma-voice
+  - action: download_github
+    src: https://github.com/AvarianKnight/pma-voice
+    ref: main
+    subpath: resources
+    dest: ./resources/[dependencies]
 
+  # Download ox_lib
   - action: download_file
     url: https://github.com/overextended/ox_lib/releases/latest/download/ox_lib.zip
     path: ./tmp/ox_lib.zip
   - action: unzip
     src: ./tmp/ox_lib.zip
-    dest: ./resources/[ox]
+    dest: ./resources/[dependencies]
 
+  # Download oxmysql
   - action: download_file
     url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
     path: ./tmp/oxmysql.zip
   - action: unzip
     src: ./tmp/oxmysql.zip
-    dest: ./resources/[ox]
- 
- - action: download_file
+    dest: ./resources/[dependencies]
+
+  # Download ND_Core
+  - action: download_file
+    url: https://github.com/ND-Framework/ND_Core/releases/latest/download/ND_Core.zip
+    path: ./tmp/ND_Core.zip
+  - action: unzip
+    src: ./tmp/ND_Core.zip
+    dest: ./resources/[scripts]
+
+  # Download ox_target
+  - action: download_file
     url: https://github.com/overextended/ox_target/releases/latest/download/ox_target.zip
     path: ./tmp/ox_target.zip
   - action: unzip
     src: ./tmp/ox_target.zip
-    dest: ./resources/[ox]
+    dest: ./resources/[dependencies]
 
- - action: download_file
+  # Download ox_doorlock
+  - action: download_file
     url: https://github.com/overextended/ox_doorlock/releases/latest/download/ox_doorlock.zip
     path: ./tmp/ox_doorlock.zip
   - action: unzip
     src: ./tmp/ox_doorlock.zip
-    dest: ./resources/[ox]
-    
-  # Clean up
-  - action: remove_path
-    path: ./tmp
+    dest: ./resources/[dependencies]
+
+  # Download ox_inventory
+  - action: download_file
+    url: https://github.com/overextended/ox_inventory/releases/latest/download/ox_inventory.zip
+    path: ./tmp/ox_inventory.zip
+  - action: unzip
+    src: ./tmp/ox_inventory.zip
+    dest: ./resources/[scripts]
+
+  # Download npwd
+  - action: download_file
+    url: https://github.com/project-error/npwd/releases/latest/download/npwd.zip
+    path: ./tmp/npwd.zip
+  - action: unzip
+    src: ./tmp/npwd.zip
+    dest: ./resources/[scripts]
+
+
+  # Other scrits below!
+
+
+  # Download ND_Characters
+  - action: download_file
+    url: https://github.com/ND-Framework/ND_Characters/releases/latest/download/ND_Characters.zip
+    path: ./tmp/ND_Characters.zip
+  - action: unzip
+    src: ./tmp/ND_Characters.zip
+    dest: ./resources/[scripts]
+
+  # Download ND_AppearanceShops
+  - action: download_github
+    src: https://github.com/ND-Framework/ND_AppearanceShops
+    ref: main
+    subpath: resources
+    dest: ./resources/[scripts]
+
+  # Download ND_Dealership
+  - action: download_file
+    url: https://github.com/ND-Framework/ND_Dealership/releases/latest/download/ND_Dealership.zip
+    path: ./tmp/ND_Dealership.zip
+  - action: unzip
+    src: ./tmp/ND_Dealership.zip
+    dest: ./resources/[scripts]
+
+  # Download ND_Casino
+  - action: download_github
+    src: https://github.com/ND-Framework/ND_Casino
+    ref: main
+    subpath: resources
+    dest: ./resources/[scripts]
+
+  # Download ND_Blackjack
+  - action: download_github
+    src: https://github.com/ND-Framework/ND_Blackjack
+    ref: main
+    subpath: resources
+    dest: ./resources/[scripts]
+
+  # Download ND_Nitro
+  - action: download_file
+    url: https://github.com/ND-Framework/ND_Nitro/releases/latest/download/ND_Nitro.zip
+    path: ./tmp/ND_Nitro.zip
+  - action: unzip
+    src: ./tmp/ND_Nitro.zip
+    dest: ./resources/[scripts]
+
+  # Download ND_Status
+  - action: download_file
+    url: https://github.com/ND-Framework/ND_Status/releases/latest/download/ND_Status.zip
+    path: ./tmp/ND_Status.zip
+  - action: unzip
+    src: ./tmp/ND_Status.zip
+    dest: ./resources/[scripts]
+
+  # Download ND_Status
+  - action: download_file
+    url: https://github.com/ND-Framework/ND_Banking/releases/latest/download/ND_Banking.zip
+    path: ./tmp/ND_Banking.zip
+  - action: unzip
+    src: ./tmp/ND_Banking.zip
+    dest: ./resources/[scripts]
+
+  # Prepare Database
+  - action: connect_database
