@@ -37,70 +37,70 @@ tasks:
     
   # Download Resources
   - action: download_file
-    url: https://github.com/ND-Framework/ND_Core/releases/download/v2.1.1/ND_Core.zip
+    url: https://github.com/ND-Framework/ND_Core/releases/latest/download/ND_Core.zip
     path: ./tmp/ND_core.zip
   - action: unzip
     src: ./tmp/ND_core.zip
     dest: ./resources/[nd]
 
   - action: download_file
-    url: https://github.com/ND-Framework/ND_Dealership/releases/download/v2.0.1/ND_Dealership.zip
+    url: https://github.com/ND-Framework/ND_Dealership/releases/latest/download/ND_Dealership.zip
     path: ./tmp/ND_Dealership.zip
   - action: unzip
     src: ./tmp/ND_Dealership.zip
     dest: ./resources/[nd]
     ###
   - action: download_file
-    url: https://github.com/ND-Framework/ND_Nitro/releases/download/v2.0.1/ND_Nitro.zip
+    url: https://github.com/ND-Framework/ND_Nitro/releases/latest/download/ND_Nitro.zip
     path: ./tmp/ND_Nitro.zip
   - action: unzip
     src: ./tmp/ND_Nitro.zip
     dest: ./resources/[nd]
     
   - action: download_file
-    url: https://github.com/ND-Framework/ND_Characters/releases/download/v2.1.2/ND_Characters.zip
+    url: https://github.com/ND-Framework/ND_Characters/releases/latest/download/ND_Characters.zip
     path: ./tmp/ND_Characters.zip
   - action: unzip
     src: ./tmp/ND_Characters.zip
     dest: ./resources/[nd]
 
   - action: download_file
-    url: https://github.com/ND-Framework/ND_Status/releases/download/v1/ND_Status.zip
+    url: https://github.com/ND-Framework/ND_Status/releases/latest/download/ND_Status.zip
     path: ./tmp/ND_Status.zip
   - action: unzip
     src: ./tmp/ND_Status.zip
     dest: ./resources/[nd]
     
   - action: download_file
-    url: https://github.com/ND-Framework/ND_Banking/releases/download/v2.0.0/ND_Banking.zip
+    url: https://github.com/ND-Framework/ND_Banking/releases/latest/download/ND_Banking.zip
     path: ./tmp/ND_Banking.zip
   - action: unzip
     src: ./tmp/ND_Banking.zip
     dest: ./resources/[nd]
 
   - action: download_file
-    url: https://github.com/overextended/ox_lib/releases/download/v3.15.1/ox_lib.zip
+    url: https://github.com/overextended/ox_lib/releases/latest/download/ox_lib.zip
     path: ./tmp/ox_lib.zip
   - action: unzip
     src: ./tmp/ox_lib.zip
     dest: ./resources/[ox]
 
   - action: download_file
-    url: https://github.com/overextended/oxmysql/releases/download/v2.7.7/oxmysql.zip
+    url: https://github.com/overextended/oxmysql/releases/latest/download/oxmysql.zip
     path: ./tmp/oxmysql.zip
   - action: unzip
     src: ./tmp/oxmysql.zip
     dest: ./resources/[ox]
  
  - action: download_file
-    url: https://github.com/overextended/ox_target/releases/download/v1.13.1/ox_target.zip
+    url: https://github.com/overextended/ox_target/releases/latest/download/ox_target.zip
     path: ./tmp/ox_target.zip
   - action: unzip
     src: ./tmp/ox_target.zip
     dest: ./resources/[ox]
 
  - action: download_file
-    url: https://github.com/overextended/ox_doorlock/releases/download/v1.14.4/ox_doorlock.zip
+    url: https://github.com/overextended/ox_doorlock/releases/latest/download/ox_doorlock.zip
     path: ./tmp/ox_doorlock.zip
   - action: unzip
     src: ./tmp/ox_doorlock.zip
