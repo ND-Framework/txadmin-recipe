@@ -43,14 +43,13 @@ tasks:
     src: https://github.com/citizenfx/screenshot-basic
     ref: master
     subpath: resources
-    dest: ./resources/[dependencies]
+    dest: ./resources/[dependencies]/screenshot-basic
 
   # Download pma-voice
   - action: download_github
     src: https://github.com/AvarianKnight/pma-voice
     ref: main
-    subpath: resources
-    dest: ./resources/[dependencies]
+    dest: ./resources/[dependencies]/pma-voice
 
   # Download ox_lib
   - action: download_file
@@ -124,7 +123,7 @@ tasks:
   - action: download_github
     src: https://github.com/ND-Framework/ND_AppearanceShops
     ref: main
-    dest: ./resources/[scripts]
+    dest: ./resources/[scripts]/ND_AppearanceShops
 
   # Download ND_Dealership
   - action: download_file
@@ -138,13 +137,13 @@ tasks:
   - action: download_github
     src: https://github.com/ND-Framework/ND_Casino
     ref: main
-    dest: ./resources/[scripts]
+    dest: ./resources/[scripts]/ND_Casino
 
   # Download ND_Blackjack
   - action: download_github
     src: https://github.com/ND-Framework/ND_Blackjack
     ref: master
-    dest: ./resources/[scripts]
+    dest: ./resources/[scripts]/ND_Blackjack
 
   # Download ND_Nitro
   - action: download_file
