@@ -124,7 +124,6 @@ tasks:
   - action: download_github
     src: https://github.com/ND-Framework/ND_AppearanceShops
     ref: main
-    subpath: resources
     dest: ./resources/[scripts]
 
   # Download ND_Dealership
@@ -139,14 +138,12 @@ tasks:
   - action: download_github
     src: https://github.com/ND-Framework/ND_Casino
     ref: main
-    subpath: resources
     dest: ./resources/[scripts]
 
   # Download ND_Blackjack
   - action: download_github
     src: https://github.com/ND-Framework/ND_Blackjack
     ref: master
-    subpath: resources
     dest: ./resources/[scripts]
 
   # Download ND_Nitro
@@ -175,3 +172,7 @@ tasks:
 
   # Prepare Database
   - action: connect_database
+
+  # Clean up
+  - action: remove_path
+    path: ./tmp
