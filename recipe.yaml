@@ -39,11 +39,12 @@ tasks:
     dest: ./resources/[default]
 
   # Download screenshot-basic
-  - action: download_github
-    src: https://github.com/citizenfx/screenshot-basic
-    ref: master
-    subpath: resources
-    dest: ./resources/[dependencies]/screenshot-basic
+  - action: download_file
+    url: https://github.com/andyyy7666/screenshot-basic/releases/latest/download/screenshot-basic.zip
+    path: ./tmp/screenshot-basic.zip
+  - action: unzip
+    src: ./tmp/screenshot-basic.zip
+    dest: ./resources/[dependencies]
 
   # Download pma-voice
   - action: download_github
@@ -74,6 +75,14 @@ tasks:
   - action: unzip
     src: ./tmp/ND_Core.zip
     dest: ./resources/[scripts]
+
+  # Download fivem-appearance
+  - action: download_file
+    url: https://github.com/Andyyy7666/fivem-appearance/releases/latest/download/fivem-appearance.zip
+    path: ./tmp/fivem-appearance.zip
+  - action: unzip
+    src: ./tmp/fivem-appearance.zip
+    dest: ./resources/[dependencies]
 
   # Download ox_target
   - action: download_file
