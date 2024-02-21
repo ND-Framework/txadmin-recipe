@@ -6,4 +6,4 @@
 https://raw.githubusercontent.com/ND-Framework/txadmin-recipe/main/recipe.yaml
 ```
 
-Thanks to realCallMeJ and Willow-6855 for their contributions!
+Thanks to [realCallMeJ](https://github.com/realCallMeJ) and [Willow-6855](https://github.com/Willow-6855) for their contributions!
