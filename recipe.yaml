@@ -170,12 +170,36 @@ tasks:
     src: ./tmp/ND_Status.zip
     dest: ./resources/[scripts]
 
-  # Download ND_Status
+  # Download ND_Banking
   - action: download_file
     url: https://github.com/ND-Framework/ND_Banking/releases/latest/download/ND_Banking.zip
     path: ./tmp/ND_Banking.zip
   - action: unzip
     src: ./tmp/ND_Banking.zip
+    dest: ./resources/[scripts]
+
+  # Download ND_MDT
+  - action: download_file
+    url: https://github.com/ND-Framework/ND_MDT/releases/latest/download/ND_MDT.zip
+    path: ./tmp/ND_MDT.zip
+  - action: unzip
+    src: ./tmp/ND_MDT.zip
+    dest: ./resources/[scripts]
+
+  # Download ND_Police
+  - action: download_file
+    url: https://github.com/ND-Framework/ND_Police/releases/latest/download/ND_Police.zip
+    path: ./tmp/ND_Police.zip
+  - action: unzip
+    src: ./tmp/ND_Police.zip
+    dest: ./resources/[scripts]
+
+  # Download ND_Ambulance
+  - action: download_file
+    url: https://github.com/ND-Framework/ND_Ambulance/releases/latest/download/ND_Ambulance.zip
+    path: ./tmp/ND_Ambulance.zip
+  - action: unzip
+    src: ./tmp/ND_Ambulance.zip
     dest: ./resources/[scripts]
 
   # Prepare Database
