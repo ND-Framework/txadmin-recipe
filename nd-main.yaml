@@ -1,6 +1,6 @@
 $engine: 3
 $onesync: on
-$minFxVersion: 7290
+$minFxVersion: 12913
 name: ND_Core Main
 description: The official recipe for ND_Core.
 author: Andyyy
